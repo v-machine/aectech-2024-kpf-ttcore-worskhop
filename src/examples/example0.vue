@@ -1,6 +1,6 @@
 <template>
   <div id="body">
-    <!-- HTML -->
+    <!-- THIS IS A HTML TEMPLATE -->
     <h1 id="title">Introduction to Web Development</h1>
     <br>
     <p>Web development is made up of three major parts:</p>
@@ -13,6 +13,7 @@
     
     <br>
 
+    <h5>this is an h5 heading</h5>
     <h2>To learn more about basic web development feel free to check out the following link:</h2>
     <a href="https://www.w3schools.com/html/html_intro.asp">W3 Link</a>
 
@@ -54,7 +55,7 @@ const changeTitleColor = () => {
 }
 
 .myButton {
-  background-color: black;
+  background-color: rgb(45, 156, 230);
   color: white;
   width: 100px;
   height: 50px;

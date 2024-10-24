@@ -2,8 +2,8 @@
 
   <div id="sidebar">
     <Slider :title="radiusSliderName" :min="1" max="100" :step="1" :val="radiusSliderValue" @update="updateValue"></Slider>
-    <Slider :title="divisionsVertSliderName" :min="1" max="30" :step="1" :val="divisionsVertValue" @update="updateValue"></Slider>
-    <Slider :title="horzDivisionWidthSliderName" :min="1" max="10" :step="1" :val="horzDivisionWidthValue" @update="updateValue"></Slider>
+    <Slider :title="divisionsVertSliderName" :min="1" max="30" :step="2" :val="divisionsVertValue" @update="updateValue"></Slider>
+    <Slider :title="horzDivisionWidthSliderName" :min="1" max="10" :step="2" :val="horzDivisionWidthValue" @update="updateValue"></Slider>
     <Toggle :title="makeSpikeyToggleName" :val="makeSpikeyToggleValue" @update="updateValue"></Toggle>
   </div>
 

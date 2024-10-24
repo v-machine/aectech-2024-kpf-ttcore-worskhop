@@ -1,8 +1,17 @@
 <template>
 
     <div id="sidebar">
+      <Slider :title="heightSliderName" :min="1" :max="30" :step="3" :val="heightSliderValue" @update="updateValue"></Slider>
 
+      <Slider :title="widthSliderName" :min="1" :max="50" :step="2" :val="widthSliderValue" @update="updateValue"></Slider>
+
+      <Slider :title="horizontalRotationSliderName" :min="0" :max="30" :step="1" :val="horizontalRotationSliderValue" @update="updateValue"></Slider>
       
+      <Slider :title="verticalRotationSliderName" :min="0" :max="30" :step="1" :val="verticalRotationSliderValue" @update="updateValue"></Slider>
+
+      <Dropdown :title="shapeDropDownName" :options="dropdownOptions" :val="shapeIndex" @update="updateValue"></Dropdown>
+
+      <MetadataTextBox :metadata="metadata"></MetadataTextBox>
     </div>
   
     <div id="viewer">
@@ -23,10 +32,30 @@
   const path = def
 
   //define input names and values
- 
-  //define inputs to be sent to Geometry View (and compute)
-   let inputs = ref({
+  const heightSliderName = "Height";
+  const heightSliderValue = ref(20);
+  const widthSliderName = "Width";
+  const widthSliderValue = ref(33);
+  const horizontalRotationSliderName = "HorizontalRotation";
+  const horizontalRotationSliderValue = ref(0);
+  const verticalRotationSliderName = "VerticalRotation";
+  const verticalRotationSliderValue = ref(0);
+  const shapeDropDownName = "Shape";
+  const shapeIndex = ref(0);
+  const dropdownOptions = ref([
+    {label: "Standard", value: 0},
+    {label: "Concave", value: 1},
+    {label: "Convex", value: 2},
+  ]);
+  const metadata=ref([]);
 
+    //define inputs to be sent to Geometry View (and compute)
+   let inputs = ref({
+    [heightSliderName]: heightSliderValue.value,
+    [widthSliderName]: widthSliderValue.value,
+    [horizontalRotationSliderName]: horizontalRotationSliderValue.value,
+    [verticalRotationSliderName]: verticalRotationSliderValue.value,
+    [shapeDropDownName]: shapeIndex.value,
   });
   
   function updateValue(newValue, parameterName) {

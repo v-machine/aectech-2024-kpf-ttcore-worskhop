@@ -61,8 +61,6 @@
   ])
 
   let metadata = ref([])
-
-
   
   //define inputs
   let inputs = ref({
@@ -70,7 +68,7 @@
     [widthSliderName.value] : widthSliderValue.value ,
     [verticalRotationSliderName.value] : verticalRotationValue.value,
     [horizontalRotationSliderName.value] : horizontalRotationValue.value,
-    [shapeDropDownName.value] : shapeIndex.value
+    [shapeDropDownName.value] : shapeIndex.value,
   });
   
   function updateValue(newValue, parameterName) {
